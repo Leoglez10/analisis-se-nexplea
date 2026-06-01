@@ -1183,3 +1183,83 @@ body {
     width: 100%;
   }
 }
+
+/* Tarjeta de Desbloqueo de API Key (BYOK) */
+.api-unlock-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn var(--transition-normal);
+  border-color: rgba(0, 242, 254, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 242, 254, 0.03);
+}
+
+.unlock-icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid var(--primary-glow);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 0 4px var(--primary-glow));
+}
+
+.api-unlock-card h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.api-unlock-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.75rem;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.unlock-input-group {
+  display: flex;
+  width: 100%;
+  max-width: 480px;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.unlock-input-group .input-text {
+  flex: 1;
+}
+
+.unlock-tip {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.unlock-tip a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.unlock-tip a:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .unlock-input-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .api-unlock-card {
+    padding: 1.75rem;
+  }
+}

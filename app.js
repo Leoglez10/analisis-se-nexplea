@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const loaderPercentage = document.getElementById('loader-percentage');
   const processingFileName = document.getElementById('processing-file-name');
   
+  // Tarjeta de Desbloqueo (BYOK)
+  const apiUnlockCard = document.getElementById('api-unlock-card');
+  const unlockApiKeyInput = document.getElementById('unlock-api-key');
+  const btnUnlock = document.getElementById('btn-unlock');
+  
   // Línea de tiempo
   const steps = {
     read: document.getElementById('step-read'),
@@ -60,6 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
     extractedData: null,
     fileName: ''
   };
+
+  // Verificar y gestionar visualmente la configuración de la clave
+  function checkApiConfiguration() {
+    if (appState.apiKey) {
+      apiUnlockCard.classList.add('hidden');
+      dropzone.classList.remove('hidden');
+    } else {
+      apiUnlockCard.classList.remove('hidden');
+      dropzone.classList.add('hidden');
+    }
+  }
+
+  // Escuchar evento de desbloqueo
+  btnUnlock.addEventListener('click', () => {
+    const key = unlockApiKeyInput.value.trim();
+    if (!key) {
+      alert('Por favor introduce una API Key de Gemini válida.');
+      return;
+    }
+    localStorage.setItem('gemini_api_key', key);
+    appState.apiKey = key;
+    checkApiConfiguration();
+  });
+
+  // Ejecutar verificación inicial
+  checkApiConfiguration();
 
   // ==========================================================================
   // Eventos Drag and Drop y Carga de Archivo
@@ -263,7 +294,16 @@ REGLAS DE EXTRACCIÓN CRÍTICAS:
 
       if (!response.ok) {
         const errJson = await response.json().catch(() => ({}));
-        const errMsg = errJson.error?.message || 'Error desconocido del servidor de Google.';
+        let errMsg = 'Error desconocido del servidor de Google.';
+        
+        if (errJson.error) {
+          if (typeof errJson.error === 'object' && errJson.error.message) {
+            errMsg = errJson.error.message;
+          } else if (typeof errJson.error === 'string') {
+            errMsg = errJson.error;
+          }
+        }
+        
         throw new Error(`Error en API (${response.status}): ${errMsg}`);
       }
 
