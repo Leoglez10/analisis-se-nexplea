@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnReprocess = document.getElementById('btn-reprocess');
  
   // Estado Global de la App
+  const localApiKey = window.LOCAL_GEMINI_API_KEY || '';
   const isKeyHardcoded = (typeof GEMINI_API_KEY !== 'undefined' && GEMINI_API_KEY && GEMINI_API_KEY !== 'TU_API_KEY_AQUI');
+  
   let appState = {
-    apiKey: isKeyHardcoded ? GEMINI_API_KEY : (localStorage.getItem('gemini_api_key') || ''),
+    apiKey: localApiKey || (isKeyHardcoded ? GEMINI_API_KEY : (localStorage.getItem('gemini_api_key') || '')),
     model: 'gemini-2.5-flash',
     extractedData: null,
     fileName: ''

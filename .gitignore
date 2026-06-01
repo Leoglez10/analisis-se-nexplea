@@ -1,6 +1,7 @@
 # Entorno y variables secretas
 .env
 .env.local
+config.js
 .env.development.local
 .env.test.local
 .env.production.local

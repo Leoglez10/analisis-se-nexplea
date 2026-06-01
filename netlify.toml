@@ -7,6 +7,10 @@
   # Carpeta que contiene las funciones serverless de backend
   functions = "netlify/functions"
 
+[functions.extract]
+  # Tiempo de espera extendido a 90 segundos para la extracción con IA
+  timeout = 90
+
 # Reglas de redirección básicas para SPA o APIs si fueran necesarias
 [[redirects]]
   from = "/api/*"
