@@ -242,8 +242,8 @@ REGLAS DE EXTRACCIÓN CRÍTICAS:
       url = `https://generativelanguage.googleapis.com/v1beta/models/${appState.model}:generateContent?key=${appState.apiKey}`;
       bodyToSend = JSON.stringify(requestBody);
     } else {
-      // Si no hay llave local, llamamos a la función Serverless segura de Netlify
-      url = `/.netlify/functions/extract`;
+      // Si no hay llave local, llamamos a la función Serverless universal (Netlify/Vercel)
+      url = `/api/extract`;
       bodyToSend = JSON.stringify({
         model: appState.model,
         contents: requestBody.contents,
