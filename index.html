@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SE-Extract AI - Extractor Socioeconómico Nexplea</title>
+  <meta name="description" content="Extrae automáticamente datos de Estudios Socioeconómicos en PDF y conviértelos a JSON estructurado. Ideal para empresas de recursos humanos que necesitan digitalizar candidatos.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Nexplea">
+  <meta name="keywords" content="estudio socioeconómico, extractor JSON, PDF a JSON, recursos humanos, contratación, análisis de candidatos, IA, Gemini">
+  <link rel="canonical" href="https://se-extract.ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SE-Extract AI - Extractor Socioeconómico">
+  <meta property="og:description" content="Convierte Estudios Socioeconómicos PDF en JSON estructurado en segundos. Usa IA con Google Gemini.">
+  <meta property="og:url" content="https://se-extract.ai/">
+  <meta property="og:site_name" content="SE-Extract AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SE-Extract AI - Extractor Socioeconómico">
+  <meta name="twitter:description" content="Convierte Estudios Socioeconómicos PDF en JSON estructurado en segundos.">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +27,12 @@
   <!-- Barra de Navegación -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">
+      <a href="/" class="logo">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
         </svg>
         <span class="logo-text">SE-Extract <span class="logo-accent">AI</span></span>
-      </div>
+      </a>
 
     </div>
   </nav>
@@ -222,6 +235,52 @@
   </main>
 
 
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SE-Extract AI",
+    "description": "Extractor de Estudios Socioeconómicos PDF a JSON usando IA con Google Gemini.",
+    "url": "https://se-extract.ai/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Nexplea"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es SE-Extract AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SE-Extract AI es una herramienta que usa inteligencia artificial (Google Gemini) para extraer automáticamente datos de Estudios Socioeconómicos en PDF y convertirlos a formato JSON estructurado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué formato de archivo acepta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Acepta archivos PDF de estudios socioeconómicos de candidatos."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Carga de Módulos JavaScript -->
   <script src="config.js"></script>
