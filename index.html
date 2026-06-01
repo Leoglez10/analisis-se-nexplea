@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SE-Extract AI - Extractor Socioeconómico Inteligente</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span class="logo-text">SE-Extract <span class="logo-accent">AI</span></span>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Contenedor Principal -->
+  <main class="main-container">
+
+
+
+    <!-- FASE 1: Zona de Carga (Dropzone) -->
+    <section id="upload-stage" class="stage-container">
+      <div class="welcome-text">
+        <h1>Extrae tus Estudios Socioeconómicos a JSON en Segundos</h1>
+        <p>Arrastra tu estudio en PDF y observa cómo la IA procesa, estructura y mapea toda la información al formato exacto de tu plantilla en tiempo récord.</p>
+      </div>
+
+      <div id="dropzone" class="dropzone glass-panel">
+        <input type="file" id="file-input" accept="application/pdf" style="display: none;">
+        <div class="dropzone-content">
+          <div class="upload-icon-container">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+            </svg>
+          </div>
+          <h2>Arrastra y suelta tu archivo PDF aquí</h2>
+          <p>o haz clic para explorar en tu equipo</p>
+          <span class="file-limits">Soporta archivos PDF de estudios socioeconómicos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 2: Pantalla de Procesamiento / Cargando -->
+    <section id="processing-stage" class="stage-container hidden">
+      <div class="processing-card glass-panel">
+        <div class="loader-container">
+          <div class="pulse-loader"></div>
+          <div class="loader-percentage" id="loader-percentage">0%</div>
+        </div>
+        
+        <h2>Procesando Estudio Socioeconómico</h2>
+        <p class="processing-subtitle" id="processing-file-name">archivo.pdf</p>
+
+        <!-- Línea de Tiempo / Hitos de progreso -->
+        <div class="timeline">
+          <div class="timeline-item" id="step-read">
+            <div class="timeline-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-pending"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="timeline-text">Lectura del archivo local y codificación binaria</div>
+          </div>
+          <div class="timeline-item" id="step-connect">
+            <div class="timeline-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-pending"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="timeline-text">Estableciendo conexión segura con Google Gemini API</div>
+          </div>
+          <div class="timeline-item" id="step-ai">
+            <div class="timeline-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-pending"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="timeline-text">Análisis de texto, imágenes y estructura del PDF</div>
+          </div>
+          <div class="timeline-item" id="step-mapping">
+            <div class="timeline-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-pending"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="timeline-text">Mapeando campos a la estructura ESE JSON</div>
+          </div>
+          <div class="timeline-item" id="step-finalize">
+            <div class="timeline-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-pending"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="timeline-text">Formateando y preparando archivo descargable</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 3: Workspace de Resultados -->
+    <section id="result-stage" class="stage-container workspace-grid hidden">
+      
+      <!-- Panel Izquierdo: Ficha del Candidato Extraído -->
+      <div class="glass-panel workspace-panel" id="candidate-panel">
+        <div class="panel-header">
+          <div class="panel-title-area">
+            <div class="panel-icon-circle accent-blue">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h2>Ficha del Candidato</h2>
+          </div>
+          <button id="btn-reprocess" class="btn btn-secondary btn-small">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+            </svg>
+            Cargar otro
+          </button>
+        </div>
+
+        <div class="panel-content scrollable">
+          <!-- Tarjeta de Identificación Principal -->
+          <div class="candidate-hero">
+            <div class="candidate-avatar">
+              <span id="candidate-initials">--</span>
+            </div>
+            <div class="candidate-main-info">
+              <h3 id="info-nombre">Cargando Nombre...</h3>
+              <p class="candidate-job" id="info-puesto">Puesto Solicitado</p>
+              <div class="badge-row">
+                <span class="badge" id="info-empresa">Empresa</span>
+                <span class="badge badge-accent" id="info-edad">-- años</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Campos Detallados del Candidato -->
+          <div class="info-grid">
+            <div class="info-item">
+              <label>Género</label>
+              <span id="info-sexo">--</span>
+            </div>
+            <div class="info-item">
+              <label>Estado Civil</label>
+              <span id="info-estado-civil">--</span>
+            </div>
+            <div class="info-item">
+              <label>Teléfonos</label>
+              <span id="info-telefonos">--</span>
+            </div>
+            <div class="info-item">
+              <label>Grado de Estudios</label>
+              <span id="info-estudios">--</span>
+            </div>
+            <div class="info-item full-width">
+              <label>Dirección Completa</label>
+              <span id="info-direccion">--</span>
+            </div>
+            <div class="info-item full-width">
+              <label>Último Empleo</label>
+              <span id="info-ultimo-empleo">--</span>
+            </div>
+            <div class="info-item">
+              <label>Referencias Laborales</label>
+              <span id="info-ref-laborales">--</span>
+            </div>
+            <div class="info-item">
+              <label>Referencias Vecinales</label>
+              <span id="info-ref-vecinales">--</span>
+            </div>
+            <div class="info-item full-width">
+              <label>Dictamen de la Evaluación</label>
+              <div class="dictamen-badge" id="info-dictamen">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel Derecho: Visor del JSON Resultante -->
+      <div class="glass-panel workspace-panel" id="json-panel">
+        <div class="panel-header">
+          <div class="panel-title-area">
+            <div class="panel-icon-circle accent-purple">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h2>Salida ESE JSON</h2>
+          </div>
+          <div class="file-name-input-group">
+            <input type="text" id="output-filename" class="input-text filename-input" placeholder="nombre-archivo">
+            <span class="file-extension">.json</span>
+          </div>
+        </div>
+
+        <div class="panel-content code-pane">
+          <pre class="code-block"><code id="json-code" class="json-code"></code></pre>
+        </div>
+
+        <div class="panel-footer">
+          <button id="btn-copy" class="btn btn-secondary btn-with-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            <span id="btn-copy-text">Copiar JSON</span>
+          </button>
+          <button id="btn-download" class="btn btn-primary btn-glow btn-with-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Descargar JSON
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- Carga de Módulos JavaScript -->
+  <script src="template.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

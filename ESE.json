@@ -1,0 +1,312 @@
+{
+  "fecha": "2026-06-01",
+  "puesto": "",
+  "empresa": "",
+  "nombre": "",
+  "lugarNacimiento": "",
+  "fechaNacimiento": "",
+  "edad": "",
+  "sexo": "",
+  "estadoCivil": "",
+  "calle": "",
+  "colonia": "",
+  "municipio": "",
+  "cp": "",
+  "estado": "",
+  "entreCalles": "",
+  "gradoEstudios": "",
+  "telefonos": "",
+  "docs": {
+    "actaNacimiento": {
+      "checked": false,
+      "folio": ""
+    },
+    "ine": {
+      "checked": false,
+      "folio": ""
+    },
+    "cartillaMilitar": {
+      "checked": false,
+      "folio": ""
+    },
+    "actaMatrimonio": {
+      "checked": false,
+      "folio": ""
+    },
+    "curp": {
+      "checked": false,
+      "folio": ""
+    },
+    "licenciaConducir": {
+      "checked": false,
+      "folio": ""
+    },
+    "actaNacConyuge": {
+      "checked": false,
+      "folio": ""
+    },
+    "imss": {
+      "checked": false,
+      "folio": ""
+    },
+    "recibosNomina": {
+      "checked": false,
+      "folio": ""
+    },
+    "actaNacHijos": {
+      "checked": false,
+      "folio": ""
+    },
+    "compImpuestos": {
+      "checked": false,
+      "folio": ""
+    },
+    "vigenciaMigratoria": {
+      "checked": false,
+      "folio": ""
+    },
+    "compDomicilio": {
+      "checked": false,
+      "folio": ""
+    },
+    "rfc": {
+      "checked": false,
+      "folio": ""
+    },
+    "visaNorteamericana": {
+      "checked": false,
+      "folio": ""
+    }
+  },
+  "estudios": {
+    "primaria": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    },
+    "secundaria": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    },
+    "carreraComercial": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    },
+    "bachillerato": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    },
+    "licenciatura": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    },
+    "cedulaProfesional": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    },
+    "otros": {
+      "periodo": "",
+      "escuela": "",
+      "certificado": "",
+      "promedio": ""
+    }
+  },
+  "estudiosActuales": "",
+  "periodosInactivos": "",
+  "motivosInactivos": "",
+  "deporte": {
+    "respuesta": "No",
+    "detalles": ""
+  },
+  "sindicato": {
+    "respuesta": "No",
+    "detalles": "",
+    "cargo": ""
+  },
+  "partidoPolitico": {
+    "respuesta": "No",
+    "detalles": "",
+    "cargo": ""
+  },
+  "religion": "",
+  "alcohol": {
+    "respuesta": "No",
+    "detalles": ""
+  },
+  "tabaco": {
+    "respuesta": "No",
+    "detalles": ""
+  },
+  "cirugias": {
+    "respuesta": "No",
+    "detalles": ""
+  },
+  "enfermedadesFamilia": "",
+  "planes": "",
+  "familiares": [
+    {
+      "id": 1,
+      "nombre": "",
+      "parentesco": "",
+      "edad": "",
+      "edoCivil": "",
+      "celular": "",
+      "viveConUd": "Sí"
+    }
+  ],
+  "laboralesFamiliares": [
+    {
+      "id": 1,
+      "nombre": "",
+      "empresa": "",
+      "puesto": "",
+      "antiguedad": ""
+    }
+  ],
+  "notasLaboralesFamiliares": "",
+  "ingresos": [
+    {
+      "id": 1,
+      "nombre": "",
+      "sueldo": "",
+      "aportacion": ""
+    }
+  ],
+  "egresos": [
+    {
+      "id": 1,
+      "concepto": "",
+      "monto": ""
+    }
+  ],
+  "solucionDeficit": "",
+  "bienes": [
+    {
+      "id": 1,
+      "propietario": "",
+      "tipo": "",
+      "adeudo": ""
+    }
+  ],
+  "tiempoResidencia": "",
+  "nivelZona": "",
+  "tipoVivienda": "",
+  "distribucion": {
+    "recamaras": "0",
+    "banos": "0",
+    "cocina": "0",
+    "comedor": "0",
+    "sala": "0",
+    "patioServicio": "0",
+    "cuartoServicio": "0",
+    "jardin": "0",
+    "garaje": "0"
+  },
+  "mobiliarioCalidad": "",
+  "mobiliarioCantidad": [],
+  "tamanoVivienda": "",
+  "condicionesVivienda": [],
+  "referencias": [
+    {
+      "id": 1,
+      "nombre": "",
+      "tiempo": "",
+      "telefono": "",
+      "comentarios": ""
+    }
+  ],
+  "referenciasVecinales": [
+    {
+      "id": 1,
+      "nombre": "",
+      "telefono": "",
+      "domicilio": "",
+      "conceptoAspirante": "",
+      "conceptoFamilia": "",
+      "estadoCivilVecinal": "",
+      "tieneHijos": "",
+      "sabeDondeTrabaja": "",
+      "notas": ""
+    }
+  ],
+  "empleos": [
+    {
+      "id": 1,
+      "empresa": "",
+      "area": "",
+      "domicilio": "",
+      "colonia": "",
+      "cp": "",
+      "telefono": "",
+      "tipoEmpresa": "",
+      "puesto": "",
+      "periodo": "",
+      "sueldoInicial": "",
+      "sueldoFinal": "",
+      "jefe": "",
+      "puestoJefe": "",
+      "descripcionTrabajo": "",
+      "motivoSalida": "",
+      "empresaValidada": "",
+      "telefonoValidado": "",
+      "contactoValidado": "",
+      "puestoContacto": "",
+      "tiempoLaboradoValidado": "",
+      "puestoInicialValidado": "",
+      "puestoFinalValidado": "",
+      "jefeValidado": "",
+      "sueldoInicialValidado": "",
+      "sueldoFinalValidado": "",
+      "motivoSalidaValidado": "",
+      "recomendable": "",
+      "recontratable": "",
+      "calidadTrabajo": "",
+      "puntualidad": "",
+      "honradez": "",
+      "responsabilidad": "",
+      "adaptacion": "",
+      "actitudJefes": "",
+      "actitudCompaneros": "",
+      "comentariosReferencia": ""
+    }
+  ],
+  "conclusionPersonal": "",
+  "conclusionLaboral": "",
+  "conclusionSocio": "",
+  "dictamen": "",
+  "fotos": {
+    "candidato": "",
+    "fachada": "",
+    "interior": ""
+  },
+  "fotosNotas": {
+    "candidato": {
+      "mostrar": false,
+      "texto": ""
+    },
+    "fachada": {
+      "mostrar": false,
+      "texto": ""
+    },
+    "interior": {
+      "mostrar": false,
+      "texto": ""
+    }
+  },
+  "fotosExtras": [],
+  "documentosExtras": [],
+  "marcaDeAguaEnExtras": true,
+  "incluirPortada": true,
+  "pageFormat": "Letter"
+}

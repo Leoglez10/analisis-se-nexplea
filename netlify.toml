@@ -1,0 +1,14 @@
+# Configuración de Despliegue en Netlify: SE-Extract AI
+
+[build]
+  # Carpeta que contiene los archivos públicos estáticos (HTML/CSS/JS)
+  publish = "."
+
+  # Carpeta que contiene las funciones serverless de backend
+  functions = "netlify/functions"
+
+# Reglas de redirección básicas para SPA o APIs si fueran necesarias
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
