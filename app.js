@@ -16,11 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('file-input');
   const loaderPercentage = document.getElementById('loader-percentage');
   const processingFileName = document.getElementById('processing-file-name');
-  
-  // Tarjeta de Desbloqueo (BYOK)
-  const apiUnlockCard = document.getElementById('api-unlock-card');
-  const unlockApiKeyInput = document.getElementById('unlock-api-key');
-  const btnUnlock = document.getElementById('btn-unlock');
+
   
   // Línea de tiempo
   const steps = {
@@ -66,31 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fileName: ''
   };
 
-  // Verificar y gestionar visualmente la configuración de la clave
-  function checkApiConfiguration() {
-    if (appState.apiKey) {
-      apiUnlockCard.classList.add('hidden');
-      dropzone.classList.remove('hidden');
-    } else {
-      apiUnlockCard.classList.remove('hidden');
-      dropzone.classList.add('hidden');
-    }
-  }
 
-  // Escuchar evento de desbloqueo
-  btnUnlock.addEventListener('click', () => {
-    const key = unlockApiKeyInput.value.trim();
-    if (!key) {
-      alert('Por favor introduce una API Key de Gemini válida.');
-      return;
-    }
-    localStorage.setItem('gemini_api_key', key);
-    appState.apiKey = key;
-    checkApiConfiguration();
-  });
-
-  // Ejecutar verificación inicial
-  checkApiConfiguration();
 
   // ==========================================================================
   // Eventos Drag and Drop y Carga de Archivo
