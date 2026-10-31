@@ -12,6 +12,8 @@
 
 </div>
 
+> 🇬🇧 **In English:** SE-Extract AI turns socioeconomic-study PDFs into structured JSON in seconds using Gemini. Vanilla JS with serverless functions on Netlify and Vercel.
+
 > Este README sirve a tres públicos: quien va a **usar** la herramienta, quien va a **desplegarla** y quien va a **modificar el código**.
 > Para usarla, ve a [Cómo se usa](#-cómo-se-usa). Para publicarla, ve a [Despliegue](#-despliegue). Para programar, ve a [Desarrollo](#-desarrollo).
 
